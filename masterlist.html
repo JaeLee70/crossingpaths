@@ -604,10 +604,6 @@
   display: inline-flex;
 }
 
-.is-hidden {
-  display: none;
-}
-
 .status-inspire,
 .status-original,
 .status-invente {
@@ -885,43 +881,36 @@
 
             <section class="section">
   <h2>Avatars</h2>
-  <p class="section-desc">
-    Clique sur un groupe pour afficher les avatars présents.
-  </p>
+  <p class="section-desc">Clique sur un groupe pour afficher les avatars présents.</p>
 
-  <div class="empty-state" id="emptyState">
+  <div class="empty-state" id="emptyState" style="display:none;">
     Aucun résultat ne correspond à ta recherche ou à ce filtre.
   </div>
 
-  <!-- GROUPES -->
   <div class="groups-grid" id="groupsGrid">
-    <button class="group-card" data-group="aespa">AESPA</button>
-    <button class="group-card" data-group="apink">Apink</button>
-    <button class="group-card" data-group="babymonster">BABYMONSTER</button>
-    <button class="group-card" data-group="blackpink">BLACKPINK</button>
-    <button class="group-card" data-group="bts">BTS</button>
-    <button class="group-card" data-group="cyber">CYBER</button>
-    <button class="group-card" data-group="dreamcatcher">Dreamcatcher</button>
-    <button class="group-card" data-group="nct">NCT</button>
-    <button class="group-card" data-group="rappeur">Rappeur</button>
-    <button class="group-card" data-group="solo">Solo</button>
-    <button class="group-card" data-group="straykids">Stray Kids</button>
-    <button class="group-card" data-group="viviz">VIVIZ</button>
+    <button class="group-card" type="button" data-group="aespa">AESPA</button>
+    <button class="group-card" type="button" data-group="apink">Apink</button>
+    <button class="group-card" type="button" data-group="babymonster">BABYMONSTER</button>
+    <button class="group-card" type="button" data-group="blackpink">BLACKPINK</button>
+    <button class="group-card" type="button" data-group="bts">BTS</button>
+    <button class="group-card" type="button" data-group="cyber">CYBER</button>
+    <button class="group-card" type="button" data-group="dreamcatcher">Dreamcatcher</button>
+    <button class="group-card" type="button" data-group="nct">NCT</button>
+    <button class="group-card" type="button" data-group="rappeur">Rappeur</button>
+    <button class="group-card" type="button" data-group="solo">Solo</button>
+    <button class="group-card" type="button" data-group="straykids">Stray Kids</button>
+    <button class="group-card" type="button" data-group="viviz">VIVIZ</button>
   </div>
 
   <button class="back-groups" id="backGroups" type="button">
     ← Retour aux groupes
   </button>
 
-  <!-- AVATARS -->
-  <div class="cards-grid is-hidden" id="cardsGrid">
+  <div class="cards-grid" id="cardsGrid" style="display:none;">
 
-    <!-- AESPA -->
-    <article class="avatar-card" data-group="aespa" data-type="inspire" data-name="Giselle" data-meta="AESPA" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="aespa" data-type="inspire" data-name="Giselle">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/giselle.jpg" alt="Giselle" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/giselle.jpg" alt="Giselle" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Giselle</h3>
         <p class="avatar-meta">AESPA</p>
@@ -929,12 +918,9 @@
       </div>
     </article>
 
-    <!-- APINK -->
-    <article class="avatar-card" data-group="apink" data-type="inspire" data-name="Park Chorong" data-meta="Apink" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="apink" data-type="inspire" data-name="Park Chorong">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/chorong.jpg" alt="Chorong" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/chorong.jpg" alt="Chorong" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Park Chorong</h3>
         <p class="avatar-meta">Apink</p>
@@ -942,12 +928,9 @@
       </div>
     </article>
 
-    <!-- BABYMONSTER -->
-    <article class="avatar-card" data-group="babymonster" data-type="inspire" data-name="Enami Asa" data-meta="BABYMONSTER" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="babymonster" data-type="inspire" data-name="Enami Asa">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/asa.jpg" alt="Asa" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/asa.jpg" alt="Asa" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Enami Asa</h3>
         <p class="avatar-meta">BABYMONSTER</p>
@@ -955,12 +938,9 @@
       </div>
     </article>
 
-    <!-- BLACKPINK -->
-    <article class="avatar-card" data-group="blackpink" data-type="original" data-name="Lisa" data-meta="BLACKPINK" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="blackpink" data-type="original" data-name="Lisa">
       <div class="status-badge status-original">● Original</div>
-      <div class="avatar-image">
-        <img src="images/lisa.jpg" alt="Lisa" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/lisa.jpg" alt="Lisa" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Lisa</h3>
         <p class="avatar-meta">BLACKPINK</p>
@@ -968,12 +948,9 @@
       </div>
     </article>
 
-    <!-- BTS -->
-    <article class="avatar-card" data-group="bts" data-type="inspire" data-name="Jungkook" data-meta="BTS" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="bts" data-type="inspire" data-name="Jungkook">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/jungkook.jpg" alt="Jungkook" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/jungkook.jpg" alt="Jungkook" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Jungkook</h3>
         <p class="avatar-meta">BTS</p>
@@ -981,11 +958,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="bts" data-type="inspire" data-name="Taehyung" data-meta="BTS" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="bts" data-type="inspire" data-name="Taehyung">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/taehyung.jpg" alt="Taehyung" style="object-position: center 40%;">
-      </div>
+      <div class="avatar-image"><img src="images/taehyung.jpg" alt="Taehyung" style="object-position:center 40%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Taehyung</h3>
         <p class="avatar-meta">BTS</p>
@@ -993,12 +968,9 @@
       </div>
     </article>
 
-    <!-- CYBER -->
-    <article class="avatar-card" data-group="cyber" data-type="invente" data-name="@_ciel_0" data-meta="CYBER" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="cyber" data-type="invente" data-name="@_ciel_0">
       <div class="status-badge status-invente">● Inventé</div>
-      <div class="avatar-image">
-        <img src="images/ciel.jpg" alt="Ciel" style="object-position: center 30%;">
-      </div>
+      <div class="avatar-image"><img src="images/ciel.jpg" alt="Ciel" style="object-position:center 30%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">@_ciel_0</h3>
         <p class="avatar-meta">CYBER</p>
@@ -1006,11 +978,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="cyber" data-type="invente" data-name="@oldlizard" data-meta="CYBER" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="cyber" data-type="invente" data-name="@oldlizard">
       <div class="status-badge status-invente">● Inventé</div>
-      <div class="avatar-image">
-        <img src="images/oldlizard.jpg" alt="@oldlizard" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/oldlizard.jpg" alt="@oldlizard" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">@oldlizard</h3>
         <p class="avatar-meta">CYBER</p>
@@ -1018,11 +988,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="cyber" data-type="invente" data-name="_seo._.hyuung" data-meta="CYBER" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="cyber" data-type="invente" data-name="_seo._.hyuung">
       <div class="status-badge status-invente">● Inventé</div>
-      <div class="avatar-image">
-        <img src="images/seohyung.jpg" alt="Seohyung" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/seohyung.jpg" alt="Seohyung" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">_seo._.hyuung</h3>
         <p class="avatar-meta">CYBER</p>
@@ -1030,12 +998,9 @@
       </div>
     </article>
 
-    <!-- DREAMCATCHER -->
-    <article class="avatar-card" data-group="dreamcatcher" data-type="inspire" data-name="Kim Yoohyeon" data-meta="Dreamcatcher" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="dreamcatcher" data-type="inspire" data-name="Kim Yoohyeon">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/yoohyeon.jpg" alt="Yoohyeon" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/yoohyeon.jpg" alt="Yoohyeon" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Kim Yoohyeon</h3>
         <p class="avatar-meta">Dreamcatcher</p>
@@ -1043,12 +1008,9 @@
       </div>
     </article>
 
-    <!-- NCT -->
-    <article class="avatar-card" data-group="nct" data-type="original" data-name="Kim Doyoung" data-meta="NCT" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="nct" data-type="original" data-name="Kim Doyoung">
       <div class="status-badge status-original">● Original</div>
-      <div class="avatar-image">
-        <img src="images/doyoung.jpg" alt="Doyoung" style="object-position: center 30%;">
-      </div>
+      <div class="avatar-image"><img src="images/doyoung.jpg" alt="Doyoung" style="object-position:center 30%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Kim Doyoung</h3>
         <p class="avatar-meta">NCT</p>
@@ -1056,11 +1018,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="nct" data-type="inspire" data-name="Ten Chittaphon Leechaiyapornkul" data-meta="NCT" data-note="Avatar en cours d'ajout sur le RPG.">
+    <article class="avatar-card" data-group="nct" data-type="inspire" data-name="Ten Chittaphon Leechaiyapornkul">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/ten.jpg" alt="Ten" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/ten.jpg" alt="Ten" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Ten Chittaphon Leechaiyapornkul</h3>
         <p class="avatar-meta">NCT</p>
@@ -1068,12 +1028,9 @@
       </div>
     </article>
 
-    <!-- RAPPEUR -->
-    <article class="avatar-card" data-group="rappeur" data-type="original" data-name="Kim Daniel aka Bloo" data-meta="Rappeur" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="rappeur" data-type="original" data-name="Kim Daniel aka Bloo">
       <div class="status-badge status-original">● Original</div>
-      <div class="avatar-image">
-        <img src="images/bloo.jpg" alt="Bloo" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/bloo.jpg" alt="Bloo" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Kim Daniel aka Bloo</h3>
         <p class="avatar-meta">Rappeur</p>
@@ -1081,11 +1038,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="rappeur" data-type="original" data-name="Loopy" data-meta="Rappeur" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="rappeur" data-type="original" data-name="Loopy">
       <div class="status-badge status-original">● Original</div>
-      <div class="avatar-image">
-        <img src="images/loopy.jpg" alt="Loopy" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/loopy.jpg" alt="Loopy" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Loopy</h3>
         <p class="avatar-meta">Rappeur</p>
@@ -1093,12 +1048,9 @@
       </div>
     </article>
 
-    <!-- SOLO -->
-    <article class="avatar-card" data-group="solo" data-type="inspire" data-name="DPR IAN" data-meta="Solo" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="solo" data-type="inspire" data-name="DPR IAN">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/dprian.jpg" alt="DPR IAN" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/dprian.jpg" alt="DPR IAN" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">DPR IAN</h3>
         <p class="avatar-meta">Solo</p>
@@ -1106,11 +1058,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="solo" data-type="inspire" data-name="Kim Jin Young" data-meta="Acteur / Présentateur" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="solo" data-type="inspire" data-name="Kim Jin Young">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/jinyoung.jpg" alt="Jin Young" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/jinyoung.jpg" alt="Jin Young" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Kim Jin Young</h3>
         <p class="avatar-meta">Acteur / Présentateur</p>
@@ -1118,11 +1068,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="solo" data-type="inspire" data-name="Zayn Malik" data-meta="Chanteur, compositeur, mannequin et acteur" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="solo" data-type="inspire" data-name="Zayn Malik">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/zayne.jpg" alt="Zayn Malik" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/zayne.jpg" alt="Zayn Malik" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Zayn Malik</h3>
         <p class="avatar-meta">Chanteur, compositeur, mannequin et acteur</p>
@@ -1130,12 +1078,9 @@
       </div>
     </article>
 
-    <!-- STRAY KIDS -->
-    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Bang Chan" data-meta="Stray Kids" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Bang Chan">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/chan.png" alt="Bang Chan" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/chan.png" alt="Bang Chan" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Bang Chan</h3>
         <p class="avatar-meta">Stray Kids</p>
@@ -1143,11 +1088,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Felix" data-meta="Stray Kids" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Felix">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/felix.png" alt="Felix" style="object-position: center 20%;">
-      </div>
+      <div class="avatar-image"><img src="images/felix.png" alt="Felix" style="object-position:center 20%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Felix</h3>
         <p class="avatar-meta">Stray Kids</p>
@@ -1155,11 +1098,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Han" data-meta="Stray Kids" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Han">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/han.jpg" alt="Han" style="object-position: center 20%;">
-      </div>
+      <div class="avatar-image"><img src="images/han.jpg" alt="Han" style="object-position:center 20%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Han</h3>
         <p class="avatar-meta">Stray Kids</p>
@@ -1167,11 +1108,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Hyunjin" data-meta="Stray Kids" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Hyunjin">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/hyunjin.png" alt="Hyunjin" style="object-position: center 20%;">
-      </div>
+      <div class="avatar-image"><img src="images/hyunjin.png" alt="Hyunjin" style="object-position:center 20%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Hyunjin</h3>
         <p class="avatar-meta">Stray Kids</p>
@@ -1179,11 +1118,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="straykids" data-type="original" data-name="Jeongin" data-meta="Stray Kids" data-note="Avatar réservé sur le RPG.">
+    <article class="avatar-card" data-group="straykids" data-type="original" data-name="Jeongin">
       <div class="status-badge status-original">● Original</div>
-      <div class="avatar-image">
-        <img src="images/jeongin.png" alt="Jeongin" style="object-position: center 20%;">
-      </div>
+      <div class="avatar-image"><img src="images/jeongin.png" alt="Jeongin" style="object-position:center 20%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Jeongin</h3>
         <p class="avatar-meta">Stray Kids</p>
@@ -1191,11 +1128,9 @@
       </div>
     </article>
 
-    <article class="avatar-card" data-group="straykids" data-type="original" data-name="Seungmin" data-meta="Stray Kids" data-note="Avatar réservé sur le RPG.">
+    <article class="avatar-card" data-group="straykids" data-type="original" data-name="Seungmin">
       <div class="status-badge status-original">● Original</div>
-      <div class="avatar-image">
-        <img src="images/seungmin.png" alt="Seungmin" style="object-position: center 30%;">
-      </div>
+      <div class="avatar-image"><img src="images/seungmin.png" alt="Seungmin" style="object-position:center 30%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Seungmin</h3>
         <p class="avatar-meta">Stray Kids</p>
@@ -1203,12 +1138,9 @@
       </div>
     </article>
 
-    <!-- VIVIZ -->
-    <article class="avatar-card" data-group="viviz" data-type="inspire" data-name="Umji" data-meta="VIVIZ" data-note="Avatar arrivé sur le RPG.">
+    <article class="avatar-card" data-group="viviz" data-type="inspire" data-name="Umji">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image">
-        <img src="images/umji.jpg" alt="Umji" style="object-position: center 25%;">
-      </div>
+      <div class="avatar-image"><img src="images/umji.jpg" alt="Umji" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Umji</h3>
         <p class="avatar-meta">VIVIZ</p>
@@ -1218,7 +1150,6 @@
 
   </div>
 </section>
-            
 
           <section class="section">
             <h2>Wishlist</h2>
@@ -1271,63 +1202,67 @@
   </div>
 
   <script>
-    const searchInput = document.getElementById('searchInput');
-    const filterButtons = document.querySelectorAll('.filter-pill');
-    const cards = document.querySelectorAll('.avatar-card');
-    const resultsCount = document.getElementById('resultsCount');
-    const emptyState = document.getElementById('emptyState');
+document.addEventListener("DOMContentLoaded", () => {
+  const groupsGrid = document.getElementById("groupsGrid");
+  const groupButtons = document.querySelectorAll(".group-card");
+  const cardsGrid = document.getElementById("cardsGrid");
+  const avatarCards = [...document.querySelectorAll(".avatar-card")];
+  const backGroups = document.getElementById("backGroups");
+  const emptyState = document.getElementById("emptyState");
 
-    let activeFilter = 'all';
+  avatarCards.forEach(card => {
+    card.style.display = "none";
+  });
 
-    function normalize(text) {
-      return text
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '');
-    }
+  groupButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const selectedGroup = button.dataset.group;
 
-    function updateCards() {
-      const query = normalize(searchInput.value.trim());
-      let visibleCount = 0;
+      groupsGrid.style.display = "none";
+      cardsGrid.style.display = "grid";
+      backGroups.classList.add("is-visible");
 
-      cards.forEach((card) => {
-        const type = card.dataset.type;
-        const name = normalize(card.dataset.name || '');
-        const meta = normalize(card.dataset.meta || '');
-        const note = normalize(card.dataset.note || '');
+      let hasVisibleCard = false;
 
-        const matchesFilter = activeFilter === 'all' || type === activeFilter;
-        const matchesSearch =
-          query === '' ||
-          name.includes(query) ||
-          meta.includes(query) ||
-          note.includes(query);
-
-        const shouldShow = matchesFilter && matchesSearch;
-
-        card.classList.toggle('is-hidden', !shouldShow);
-
-        if (shouldShow) {
-          visibleCount += 1;
+      avatarCards.forEach(card => {
+        if (card.dataset.group === selectedGroup) {
+          card.style.display = "block";
+          hasVisibleCard = true;
+        } else {
+          card.style.display = "none";
         }
       });
 
-      resultsCount.textContent = String(visibleCount);
-      emptyState.classList.toggle('show', visibleCount === 0);
-    }
+      const visibleCards = avatarCards
+        .filter(card => card.dataset.group === selectedGroup)
+        .sort((a, b) =>
+          a.dataset.name.localeCompare(b.dataset.name, "fr", {
+            sensitivity: "base"
+          })
+        );
 
-    filterButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        filterButtons.forEach((btn) => btn.classList.remove('active'));
-        button.classList.add('active');
-        activeFilter = button.dataset.filter;
-        updateCards();
-      });
+      visibleCards.forEach(card => cardsGrid.appendChild(card));
+
+      if (emptyState) {
+        emptyState.style.display = hasVisibleCard ? "none" : "block";
+      }
+    });
+  });
+
+  backGroups.addEventListener("click", () => {
+    groupsGrid.style.display = "grid";
+    cardsGrid.style.display = "none";
+    backGroups.classList.remove("is-visible");
+
+    avatarCards.forEach(card => {
+      card.style.display = "none";
     });
 
-    searchInput.addEventListener('input', updateCards);
-
-    updateCards();
-  </script>
+    if (emptyState) {
+      emptyState.style.display = "none";
+    }
+  });
+});
+</script>
 </body>
 </html>
