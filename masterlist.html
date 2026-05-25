@@ -564,6 +564,57 @@
       display: block;
     }
 
+    .groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.group-card {
+  border: 0;
+  border-radius: 22px;
+  padding: 30px 22px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+  color: #2d2522;
+  font: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.group-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.back-groups {
+  display: none;
+  margin: 22px 0;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  background: #2d2522;
+  color: #fff;
+  cursor: pointer;
+}
+
+.back-groups.is-visible {
+  display: inline-flex;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.status-inspire,
+.status-original,
+.status-invente {
+  background: rgba(194, 216, 205, .9);
+  color: #45665a;
+}
+
     .wishlist-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -832,296 +883,342 @@
               Aucun résultat ne correspond à ta recherche ou à ce filtre.
             </div>
 
-            <div class="cards-grid" id="cardsGrid">
-              <article class="avatar-card" data-type="inspire" data-name="Felix" data-meta="Stray Kids" data-note="Avatar réservé sur le RPG.">
-                <div class="status-badge status-original">● Inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/felix.png" alt="Felix" style="object-position: center 20%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Felix</h3>
-                  <p class="avatar-meta">Stray Kids</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+            <section class="section">
+  <h2>Avatars</h2>
+  <p class="section-desc">
+    Clique sur un groupe pour afficher les avatars présents.
+  </p>
 
-              <article class="avatar-card" data-type="inspire" data-name="Hyunjin" data-meta="Stray Kids" data-note="Avatar réservé sur le RPG.">
-                <div class="status-badge status-original">● Inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/hyunjin.png" alt="Hyunjin" style="object-position: center 20%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Hyunjin</h3>
-                  <p class="avatar-meta">Stray Kids</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+  <div class="empty-state" id="emptyState">
+    Aucun résultat ne correspond à ta recherche ou à ce filtre.
+  </div>
 
-              <article class="avatar-card" data-type="inspiré" data-name="Bang Chan" data-meta="Stray Kids" data-note="Avatar réservé sur le RPG.">
-                <div class="status-badge status-original">● Inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/chan.png" alt="Bang Chan" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Bang Chan</h3>
-                  <p class="avatar-meta">Stray Kids</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+  <!-- GROUPES -->
+  <div class="groups-grid" id="groupsGrid">
+    <button class="group-card" data-group="aespa">AESPA</button>
+    <button class="group-card" data-group="apink">Apink</button>
+    <button class="group-card" data-group="babymonster">BABYMONSTER</button>
+    <button class="group-card" data-group="blackpink">BLACKPINK</button>
+    <button class="group-card" data-group="bts">BTS</button>
+    <button class="group-card" data-group="cyber">CYBER</button>
+    <button class="group-card" data-group="dreamcatcher">Dreamcatcher</button>
+    <button class="group-card" data-group="nct">NCT</button>
+    <button class="group-card" data-group="rappeur">Rappeur</button>
+    <button class="group-card" data-group="solo">Solo</button>
+    <button class="group-card" data-group="straykids">Stray Kids</button>
+    <button class="group-card" data-group="viviz">VIVIZ</button>
+  </div>
 
-              <article class="avatar-card" data-type="original" data-name="Seungmin" data-meta="Stray Kids" data-note="Avatar réservé sur le RPG.">
-                <div class="status-badge status-original">● Original</div>
-                <div class="avatar-image">
-                  <img src="images/seungmin.png" alt="Seungmin" style="object-position: center 30%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Seungmin</h3>
-                  <p class="avatar-meta">Stray Kids</p>
-                  <p class="avatar-note">Avatar réservé sur le RPG.</p>
-                </div>
-              </article>
+  <button class="back-groups" id="backGroups" type="button">
+    ← Retour aux groupes
+  </button>
 
-              <article class="avatar-card" data-type="original" data-name="Jeongin" data-meta="Stray Kids" data-note="Avatar réservé sur le RPG.">
-                <div class="status-badge status-original">● Original</div>
-                <div class="avatar-image">
-                  <img src="images/jeongin.png" alt="Jeongin" style="object-position: center 20%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Jeongin</h3>
-                  <p class="avatar-meta">Stray Kids</p>
-                  <p class="avatar-note">Avatar réservé sur le RPG.</p>
-                </div>
-              </article>
+  <!-- AVATARS -->
+  <div class="cards-grid is-hidden" id="cardsGrid">
 
-              <article class="avatar-card" data-type="inspire" data-name="Han" data-meta="Stray Kids" data-note="Avatar réservé sur le RPG.">
-                <div class="status-badge status-original">● Inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/han.jpg" alt="Han" style="object-position: center 20%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Han</h3>
-                  <p class="avatar-meta">Stray Kids</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- AESPA -->
+    <article class="avatar-card" data-group="aespa" data-type="inspire" data-name="Giselle" data-meta="AESPA" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/giselle.jpg" alt="Giselle" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Giselle</h3>
+        <p class="avatar-meta">AESPA</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="invente" data-name="Ciel" data-meta="CYBER" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Inventé</div>
-                <div class="avatar-image">
-                  <img src="images/ciel.jpg" alt="Ciel" style="object-position: center 30%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">@_ciel_0</h3>
-                  <p class="avatar-meta">CYBER</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- APINK -->
+    <article class="avatar-card" data-group="apink" data-type="inspire" data-name="Park Chorong" data-meta="Apink" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/chorong.jpg" alt="Chorong" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Park Chorong</h3>
+        <p class="avatar-meta">Apink</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="inspire" data-name="Jungkook" data-meta="BTS" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/jungkook.jpg" alt="Jungkook" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Jungkook</h3>
-                  <p class="avatar-meta">BTS</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- BABYMONSTER -->
+    <article class="avatar-card" data-group="babymonster" data-type="inspire" data-name="Enami Asa" data-meta="BABYMONSTER" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/asa.jpg" alt="Asa" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Enami Asa</h3>
+        <p class="avatar-meta">BABYMONSTER</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="inspire" data-name="Taehyung" data-meta="BTS" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/taehyung.jpg" alt="Taehyung" style="object-position: center 40%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Taehyung</h3>
-                  <p class="avatar-meta">BTS</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- BLACKPINK -->
+    <article class="avatar-card" data-group="blackpink" data-type="original" data-name="Lisa" data-meta="BLACKPINK" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-original">● Original</div>
+      <div class="avatar-image">
+        <img src="images/lisa.jpg" alt="Lisa" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Lisa</h3>
+        <p class="avatar-meta">BLACKPINK</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="original" data-name="Loopy" data-meta="Rappeur" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Original</div>
-                <div class="avatar-image">
-                  <img src="images/loopy.jpg" alt="Loopy" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Loopy</h3>
-                  <p class="avatar-meta">Rappeur</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- BTS -->
+    <article class="avatar-card" data-group="bts" data-type="inspire" data-name="Jungkook" data-meta="BTS" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/jungkook.jpg" alt="Jungkook" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Jungkook</h3>
+        <p class="avatar-meta">BTS</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="original" data-name="Bloo" data-meta="rappeur" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Original</div>
-                <div class="avatar-image">
-                  <img src="images/bloo.jpg" alt="Bloo" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Kim Daniel aka Bloo</h3>
-                  <p class="avatar-meta">Rappeur</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <article class="avatar-card" data-group="bts" data-type="inspire" data-name="Taehyung" data-meta="BTS" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/taehyung.jpg" alt="Taehyung" style="object-position: center 40%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Taehyung</h3>
+        <p class="avatar-meta">BTS</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="invente" data-name="Zayn" data-meta="Chanteur, compositeur, mannequin et acteur" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Inventé</div>
-                <div class="avatar-image">
-                  <img src="images/zayne.jpg" alt="Zayn" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Zayn Malik</h3>
-                  <p class="avatar-meta">Chanteur, compositeur, mannequin et acteur</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- CYBER -->
+    <article class="avatar-card" data-group="cyber" data-type="invente" data-name="@_ciel_0" data-meta="CYBER" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-invente">● Inventé</div>
+      <div class="avatar-image">
+        <img src="images/ciel.jpg" alt="Ciel" style="object-position: center 30%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">@_ciel_0</h3>
+        <p class="avatar-meta">CYBER</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="original" data-name="Lisa" data-meta="BLACKPINK" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Original</div>
-                <div class="avatar-image">
-                  <img src="images/lisa.jpg" alt="Lisa" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Lisa</h3>
-                  <p class="avatar-meta">BLACKPINK</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <article class="avatar-card" data-group="cyber" data-type="invente" data-name="@oldlizard" data-meta="CYBER" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-invente">● Inventé</div>
+      <div class="avatar-image">
+        <img src="images/oldlizard.jpg" alt="@oldlizard" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">@oldlizard</h3>
+        <p class="avatar-meta">CYBER</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="invente" data-name="Jin Young" data-meta="Acteur/Présentateur" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● inventé</div>
-                <div class="avatar-image">
-                  <img src="images/jinyoung.jpg" alt="Jin Young" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Kim Jin Young</h3>
-                  <p class="avatar-meta">Acteur/Présentateur</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <article class="avatar-card" data-group="cyber" data-type="invente" data-name="_seo._.hyuung" data-meta="CYBER" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-invente">● Inventé</div>
+      <div class="avatar-image">
+        <img src="images/seohyung.jpg" alt="Seohyung" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">_seo._.hyuung</h3>
+        <p class="avatar-meta">CYBER</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="invente" data-name="seohyung" data-meta="Cyber" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● inventé</div>
-                <div class="avatar-image">
-                  <img src="images/seohyung.jpg" alt="Seohyung" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">_seo._.hyuung</h3>
-                  <p class="avatar-meta">Cyber</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- DREAMCATCHER -->
+    <article class="avatar-card" data-group="dreamcatcher" data-type="inspire" data-name="Kim Yoohyeon" data-meta="Dreamcatcher" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/yoohyeon.jpg" alt="Yoohyeon" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Kim Yoohyeon</h3>
+        <p class="avatar-meta">Dreamcatcher</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="inspire" data-name="yoohyeon" data-meta="Dreamcatcher" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/yoohyeon.jpg" alt="Yoohyeon" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Kim Yoohyeon</h3>
-                  <p class="avatar-meta">Dreamcatcher</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- NCT -->
+    <article class="avatar-card" data-group="nct" data-type="original" data-name="Kim Doyoung" data-meta="NCT" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-original">● Original</div>
+      <div class="avatar-image">
+        <img src="images/doyoung.jpg" alt="Doyoung" style="object-position: center 30%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Kim Doyoung</h3>
+        <p class="avatar-meta">NCT</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="inspire" data-name="chorong" data-meta="Apink" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/chorong.jpg" alt="Chorong" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Park Chorong</h3>
-                  <p class="avatar-meta">Apink</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <article class="avatar-card" data-group="nct" data-type="inspire" data-name="Ten Chittaphon Leechaiyapornkul" data-meta="NCT" data-note="Avatar en cours d'ajout sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/ten.jpg" alt="Ten" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Ten Chittaphon Leechaiyapornkul</h3>
+        <p class="avatar-meta">NCT</p>
+        <p class="avatar-note">Avatar en cours d'ajout sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="invente" data-name="Umji" data-meta="VIVIZ" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● inventé</div>
-                <div class="avatar-image">
-                  <img src="images/umji.jpg" alt="Umji" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Umji</h3>
-                  <p class="avatar-meta">VIVIZ</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- RAPPEUR -->
+    <article class="avatar-card" data-group="rappeur" data-type="original" data-name="Kim Daniel aka Bloo" data-meta="Rappeur" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-original">● Original</div>
+      <div class="avatar-image">
+        <img src="images/bloo.jpg" alt="Bloo" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Kim Daniel aka Bloo</h3>
+        <p class="avatar-meta">Rappeur</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="inspire" data-name="DPR IAN" data-meta="Solo" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/dprian.jpg" alt="DPR IAN" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">DPR IAN</h3>
-                  <p class="avatar-meta">Solo</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <article class="avatar-card" data-group="rappeur" data-type="original" data-name="Loopy" data-meta="Rappeur" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-original">● Original</div>
+      <div class="avatar-image">
+        <img src="images/loopy.jpg" alt="Loopy" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Loopy</h3>
+        <p class="avatar-meta">Rappeur</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="original" data-name="Doyoung" data-meta="NCT21" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Original</div>
-                <div class="avatar-image">
-                  <img src="images/doyoung.jpg" alt="Doyoung" style="object-position: center 30%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Kim Doyoung</h3>
-                  <p class="avatar-meta">NCT21</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- SOLO -->
+    <article class="avatar-card" data-group="solo" data-type="inspire" data-name="DPR IAN" data-meta="Solo" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/dprian.jpg" alt="DPR IAN" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">DPR IAN</h3>
+        <p class="avatar-meta">Solo</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="inspire" data-name="Ten" data-meta="NCT21" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/ten.jpg" alt="Ten" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Ten Chittaphon Leechaiyapornkul</h3>
-                  <p class="avatar-meta">NCT21</p>
-                  <p class="avatar-note">Avatar en cours d'ajout sur le RPG.</p>
-                </div>
-              </article>
+    <article class="avatar-card" data-group="solo" data-type="inspire" data-name="Kim Jin Young" data-meta="Acteur / Présentateur" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/jinyoung.jpg" alt="Jin Young" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Kim Jin Young</h3>
+        <p class="avatar-meta">Acteur / Présentateur</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="invente" data-name="@oldlizard" data-meta="CYBER" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Inventé</div>
-                <div class="avatar-image">
-                  <img src="images/oldlizard.jpg" alt="@oldlizard" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">@oldlizard</h3>
-                  <p class="avatar-meta">Cyber</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <article class="avatar-card" data-group="solo" data-type="inspire" data-name="Zayn Malik" data-meta="Chanteur, compositeur, mannequin et acteur" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/zayne.jpg" alt="Zayn Malik" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Zayn Malik</h3>
+        <p class="avatar-meta">Chanteur, compositeur, mannequin et acteur</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="inspire" data-name="Giselle" data-meta="AESPA" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/giselle.jpg" alt="Giselle" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Giselle</h3>
-                  <p class="avatar-meta">AESPA</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
+    <!-- STRAY KIDS -->
+    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Bang Chan" data-meta="Stray Kids" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/chan.png" alt="Bang Chan" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Bang Chan</h3>
+        <p class="avatar-meta">Stray Kids</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
 
-              <article class="avatar-card" data-type="inspire" data-name="Asa" data-meta="BABYMONSTER" data-note="Avatar arrivé sur le RPG.">
-                <div class="status-badge status-original">● Inspiré</div>
-                <div class="avatar-image">
-                  <img src="images/asa.jpg" alt="Asa" style="object-position: center 25%;">
-                </div>
-                <div class="avatar-body">
-                  <h3 class="avatar-name">Enami Asa</h3>
-                  <p class="avatar-meta">BABYMONSTER</p>
-                  <p class="avatar-note">Avatar arrivé sur le RPG.</p>
-                </div>
-              </article>
-            </div>
-          </section>
+    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Felix" data-meta="Stray Kids" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/felix.png" alt="Felix" style="object-position: center 20%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Felix</h3>
+        <p class="avatar-meta">Stray Kids</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
+
+    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Han" data-meta="Stray Kids" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/han.jpg" alt="Han" style="object-position: center 20%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Han</h3>
+        <p class="avatar-meta">Stray Kids</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
+
+    <article class="avatar-card" data-group="straykids" data-type="inspire" data-name="Hyunjin" data-meta="Stray Kids" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/hyunjin.png" alt="Hyunjin" style="object-position: center 20%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Hyunjin</h3>
+        <p class="avatar-meta">Stray Kids</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
+
+    <article class="avatar-card" data-group="straykids" data-type="original" data-name="Jeongin" data-meta="Stray Kids" data-note="Avatar réservé sur le RPG.">
+      <div class="status-badge status-original">● Original</div>
+      <div class="avatar-image">
+        <img src="images/jeongin.png" alt="Jeongin" style="object-position: center 20%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Jeongin</h3>
+        <p class="avatar-meta">Stray Kids</p>
+        <p class="avatar-note">Avatar réservé sur le RPG.</p>
+      </div>
+    </article>
+
+    <article class="avatar-card" data-group="straykids" data-type="original" data-name="Seungmin" data-meta="Stray Kids" data-note="Avatar réservé sur le RPG.">
+      <div class="status-badge status-original">● Original</div>
+      <div class="avatar-image">
+        <img src="images/seungmin.png" alt="Seungmin" style="object-position: center 30%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Seungmin</h3>
+        <p class="avatar-meta">Stray Kids</p>
+        <p class="avatar-note">Avatar réservé sur le RPG.</p>
+      </div>
+    </article>
+
+    <!-- VIVIZ -->
+    <article class="avatar-card" data-group="viviz" data-type="inspire" data-name="Umji" data-meta="VIVIZ" data-note="Avatar arrivé sur le RPG.">
+      <div class="status-badge status-inspire">● Inspiré</div>
+      <div class="avatar-image">
+        <img src="images/umji.jpg" alt="Umji" style="object-position: center 25%;">
+      </div>
+      <div class="avatar-body">
+        <h3 class="avatar-name">Umji</h3>
+        <p class="avatar-meta">VIVIZ</p>
+        <p class="avatar-note">Avatar arrivé sur le RPG.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+            
 
           <section class="section">
             <h2>Wishlist</h2>
