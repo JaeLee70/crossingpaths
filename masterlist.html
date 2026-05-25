@@ -1170,7 +1170,7 @@
 
     <article class="avatar-card" data-group="BLACKPINK" data-type="inspire" data-name="ROSÉ">
       <div class="status-badge status-inspire">● Inspiré</div>
-      <div class="avatar-image"><img src="images/rosé.jpg" alt="ROSÉ" style="object-position:center 25%;"></div>
+      <div class="avatar-image"><img src="images/rose.jpg" alt="ROSÉ" style="object-position:center 25%;"></div>
       <div class="avatar-body">
         <h3 class="avatar-name">Rosé</h3>
         <p class="avatar-meta">BLACKPINK</p>
@@ -1231,54 +1231,82 @@
     </footer>
   </div>
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const groupsGrid = document.getElementById("groupsGrid");
-  const groupButtons = document.querySelectorAll(".group-card");
   const cardsGrid = document.getElementById("cardsGrid");
   const avatarCards = [...document.querySelectorAll(".avatar-card")];
   const backGroups = document.getElementById("backGroups");
   const emptyState = document.getElementById("emptyState");
+  const memberCount = document.querySelector(".stat-number");
 
+  // Compteur total des membres
+  if (memberCount) {
+    memberCount.textContent = avatarCards.length;
+  }
+
+  // Cacher les avatars au départ
   avatarCards.forEach(card => {
     card.style.display = "none";
   });
 
-  groupButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const selectedGroup = button.dataset.group;
+  // Créer automatiquement les groupes depuis les cartes
+  const groups = [...new Set(
+    avatarCards
+      .map(card => card.dataset.group)
+      .filter(Boolean)
+  )].sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
 
-      groupsGrid.style.display = "none";
-      cardsGrid.style.display = "grid";
-      backGroups.classList.add("is-visible");
+  groupsGrid.innerHTML = "";
 
-      let hasVisibleCard = false;
-
-      avatarCards.forEach(card => {
-        if (card.dataset.group === selectedGroup) {
-          card.style.display = "block";
-          hasVisibleCard = true;
-        } else {
-          card.style.display = "none";
-        }
-      });
-
-      const visibleCards = avatarCards
-        .filter(card => card.dataset.group === selectedGroup)
-        .sort((a, b) =>
-          a.dataset.name.localeCompare(b.dataset.name, "fr", {
-            sensitivity: "base"
-          })
-        );
-
-      visibleCards.forEach(card => cardsGrid.appendChild(card));
-
-      if (emptyState) {
-        emptyState.style.display = hasVisibleCard ? "none" : "block";
-      }
-    });
+  groups.forEach(group => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "group-card";
+    button.dataset.group = group;
+    button.textContent = formatGroupName(group);
+    groupsGrid.appendChild(button);
   });
 
+  // Clic sur un groupe
+  groupsGrid.addEventListener("click", event => {
+    const button = event.target.closest(".group-card");
+    if (!button) return;
+
+    const selectedGroup = button.dataset.group;
+
+    groupsGrid.style.display = "none";
+    cardsGrid.style.display = "grid";
+    backGroups.classList.add("is-visible");
+
+    const visibleCards = avatarCards
+      .filter(card => card.dataset.group === selectedGroup)
+      .sort((a, b) =>
+        a.dataset.name.localeCompare(b.dataset.name, "fr", {
+          sensitivity: "base"
+        })
+      );
+
+    avatarCards.forEach(card => {
+      card.style.display = "none";
+    });
+
+    visibleCards.forEach(card => {
+      card.style.display = "block";
+      cardsGrid.appendChild(card);
+    });
+
+    if (emptyState) {
+      emptyState.style.display = visibleCards.length ? "none" : "block";
+    }
+
+    // Le compteur reste le total, pas le nombre du groupe
+    if (memberCount) {
+      memberCount.textContent = avatarCards.length;
+    }
+  });
+
+  // Retour aux groupes
   backGroups.addEventListener("click", () => {
     groupsGrid.style.display = "grid";
     cardsGrid.style.display = "none";
@@ -1291,7 +1319,31 @@ document.addEventListener("DOMContentLoaded", () => {
     if (emptyState) {
       emptyState.style.display = "none";
     }
+
+    if (memberCount) {
+      memberCount.textContent = avatarCards.length;
+    }
   });
+
+  function formatGroupName(group) {
+    const names = {
+      aespa: "AESPA",
+      apink: "Apink",
+      babymonster: "BABYMONSTER",
+      blackpink: "BLACKPINK",
+      bts: "BTS",
+      cyber: "CYBER",
+      dreamcatcher: "Dreamcatcher",
+      nct: "NCT",
+      rappeur: "Rappeur",
+      solo: "Solo",
+      seventeen: "Seventeen",
+      straykids: "Stray Kids",
+      viviz: "VIVIZ"
+    };
+
+    return names[group] || group;
+  }
 });
 </script>
 </body>
